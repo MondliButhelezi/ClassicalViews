@@ -7,7 +7,7 @@ class EquipmentType(models.Model):
     objects = None
     id = models.AutoField(primary_key=True)
     uuid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False)
-    last_update = models.DateTimeField()
+    last_update = models.DateTimeField(auto_now=True)
     last_update_by = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     notes = models.TextField(null=True, blank=True, max_length=300)

@@ -111,6 +111,5 @@ class AddEquipmentTypeView(View):
         return render(request, 'equipment/add_equipment_type.html', {'form': form})
 
 
-class Error404View(View):
-    def get(self, request, exception):
-        return render(request, '404.html', status=404)
+def error_404_view(request, exception):
+    return render(request, '404.html', status=404)
