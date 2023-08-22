@@ -2,20 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Monitoring Stations</title>
+    <title>Equipment Type</title>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-   crossorigin=""/>
 </head>
 <body>
-     <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-   crossorigin=""></script>
-
-    <h1>Monitoring Stations</h1>
-    <a href="{% url 'add_monitoring_station' %}"><button>Add New Record</button></a>
+    <h1>Equipment Type</h1>
+    <a href="{% url 'add_equipment_type' %}"><button>Add New Record</button></a>
     <!-- Add your form to edit the monitoring station here -->
     <form method="post">
         {% csrf_token %}
@@ -26,8 +18,7 @@
         </div>
         <button type="submit">Save</button>
     </form>
-    <a href="{% url 'monitoring_stations' %}"><button>Back</button></a>
-     <div id="map"></div>
+    <a href="{% url 'equipment_type' %}"><button>Back</button></a>
 
     <!-- JavaScript to autofill the Last update field -->
     <script>
