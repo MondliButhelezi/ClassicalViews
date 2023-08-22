@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Equipment Type</title>
+</head>
+    <body>
+        <h1>Equipment Type</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>UUID</th>
+                <th>Name</th>
+                <th>Notes</th>
+                <th>Last Update</th>
+                <th>Last Update By</th>
+            </tr>
+            {% for item in object_list %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.uuid }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.notes }}</td>
+                <td>{{ item.last_update }}</td>
+                <td>{{ item.last_update_by }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
