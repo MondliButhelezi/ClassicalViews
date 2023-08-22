@@ -8,7 +8,8 @@ urlpatterns = [
     path('monitoring_stations/', views.MonitoringStationsView.as_view(), name='monitoring_stations'),
     path('monitoring_stations/add/', views.AddMonitoringStationView.as_view(), name='add_monitoring_station'),
     path('monitoring_stations/<int:pk>/edit/', views.EditMonitoringStationView.as_view(), name='edit_monitoring_station'),
-    path('monitoring_stations/<int:pk>/delete/', views.DeleteMonitoringStationView.as_view(), name='delete_monitoring_station'),
+    path('monitoring_stations/<int:pk>/delete/', views.DeleteMonitoringStationView.as_view(),
+         name='delete_monitoring_station'),
 
     path('equipment_type/', views.EquipmentTypeView.as_view(), name='equipment_type'),
     path('equipment_type/add/', views.AddEquipmentTypeView.as_view(), name='add_equipment_type'),
