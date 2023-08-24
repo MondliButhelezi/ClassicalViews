@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views import View
 from .models import MonitoringStation, EquipmentType
 from django import forms
-from django.views import View
 
 
 class MyappView(View):
@@ -58,12 +58,7 @@ class MonitoringStationForm(forms.ModelForm):
     class Meta:
         model = MonitoringStation
         fields = '__all__'
-
-
-class EquipmentTypeForm(forms.ModelForm):
-    class Meta:
-        model = EquipmentType
-        exclude = ['last_update']
+        widgets = {'last_update': forms.TextInput(attrs={'readonly': 'readonly'})}
 
 
 class EquipmentTypeView(View):
@@ -110,6 +105,13 @@ class AddEquipmentTypeView(View):
             return redirect('equipment_type')
         return render(request, 'equipment/add_equipment_type.html', {'form': form})
 
+
+class EquipmentTypeForm(forms.ModelForm):
+    class Meta:
+        model = EquipmentType
+        exclude = ['last_update']
+        widgets = {'last_update': forms.TextInput(attrs={'readonly': 'readonly'})}
+        
 
 def error_404_view(request, exception):
     return render(request, '404.html', status=404)
