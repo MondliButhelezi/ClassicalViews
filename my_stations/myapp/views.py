@@ -111,7 +111,7 @@ class EquipmentTypeForm(forms.ModelForm):
         model = EquipmentType
         exclude = ['last_update']
         widgets = {'last_update': forms.TextInput(attrs={'readonly': 'readonly'})}
-        
+
 
 def error_404_view(request, exception):
     return render(request, '404.html', status=404)
